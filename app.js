@@ -25,7 +25,7 @@ app.use(function(req, res, next) {
 
 app.use(require('./todos'));
 
-var port = 5000;
+var port = process.env.PORT || 1337;
 app.listen(port, function() {
     console.log(`Ready to listen on port ${port}`)
 });
