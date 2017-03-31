@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TODO Application</title>
+    <link rel="stylesheet"  href="bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <h1  class="text-center"><%= title %></h1>
+        <div class="row">
+            <form class="form-inline" action="/add" method="POST">
+                <div class="col-md-3"></div>
+                <div class="col-md-5 right">
+                    <div style="width:100%;" class="form-group">
+                        <input style="width:100%;" type="text" class="form-control" name="desc" placeholder="Add Your Tasks">
+                    </div>
+                </div>
+                <div class="col-md-1 text-right">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+                <div class="col-md-3"></div>
+            </form>
+        </div>
+        <div style="margin-bottom: 20px;"></div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <% for (val of items) { %>
+                        <li class="list-group-item">
+                            <span class="badge"><%= val.date %></span>
+                            <%= val.desc %>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+</body>
+</html>
